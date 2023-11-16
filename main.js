@@ -32,6 +32,15 @@ app.get("/data/:name", async (request, response) => {
     }
 });
 
+app.get("/", async (request, response) => {
+    try {
+        const results = await collection.find({}).limit(5).toArray();
+        response.send(results);
+    } catch (error) {
+        response.status(500).send({ "message": error.message });
+    }
+});
+
 const server = app.listen(3000, async () => {
     try {
         await mongoClient.connect();
