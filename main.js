@@ -17,7 +17,8 @@ app.get("/data/:name", async (request, response) => {
                   query: request.params.name,
                   path: {
                     wildcard: "*"
-                  }
+                  },
+                  fuzzy: {}
                 }
               }
             }

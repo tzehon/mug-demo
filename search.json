@@ -3,10 +3,11 @@
     $search: {
       index: "project",
       text: {
-        query: "jiak kim",
+        query: "riviere",
         path: {
           wildcard: "*"
-        }
+        },
+       fuzzy: {}
       }
     }
   }
