@@ -1,0 +1,13 @@
+[
+  {
+    $search: {
+      index: "street",
+      text: {
+        query: "jiak kim",
+        path: {
+          wildcard: "*"
+        }
+      }
+    }
+  }
+]
