@@ -1,0 +1,13 @@
+{
+  "collectionName": "transactions",
+  "database": "ura",
+  "mappings": {
+    "dynamic": false,
+    "fields": {
+      "project": {
+        "type": "string"
+      }
+    }
+  },
+  "name": "project"
+}
