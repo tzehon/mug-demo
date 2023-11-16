@@ -7,10 +7,26 @@ const mongoClient = new MongoClient(process.env.MONGODB_ATLAS_URI);
 
 let database, collection;
 
-app.get("/data", async (request, response) => {
+app.get("/data/:name", async (request, response) => {
     try {
-        const results = await collection.find({}).limit(5).toArray();
-        response.send(results);
+        pipeline = [
+            {
+              $search: {
+                index: "street",
+                text: {
+                  query: request.params.name,
+                  path: {
+                    wildcard: "*"
+                  }
+                }
+              }
+            }
+          ]
+
+        const cursor = collection.aggregate(pipeline);
+        let results = await cursor.toArray();
+
+        response.json(results);
     } catch (error) {
         response.status(500).send({ "message": error.message });
     }
