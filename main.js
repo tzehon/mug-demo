@@ -12,7 +12,7 @@ app.get("/data/:name", async (request, response) => {
         pipeline = [
             {
               $search: {
-                index: "street",
+                index: "project",
                 text: {
                   query: request.params.name,
                   path: {
