@@ -12,18 +12,19 @@
 // Select the database to use.
 use('ura');
 
-// Insert a few documents into the sales collection.
-db.getCollection('transactions').find().limit(5);
+// db.getCollection('transactions').find().limit(5);
 
+use('ura');
 pipeline = [
                 {
                   $search: {
-                    index: "project",
+                    index: "street",
                     text: {
-                      query: "tampines",
+                      query: "george street",
                       path: {
                         wildcard: "*"
-                      }
+                      },
+                      fuzzy: {}
                     }
                   }
                 }

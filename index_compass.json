@@ -2,7 +2,7 @@
   "mappings": {
     "dynamic": false,
     "fields": {
-      "project": {
+      "street": {
         "type": "string"
       }
     }

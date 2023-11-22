@@ -1,9 +1,9 @@
 [
   {
     $search: {
-      index: "project",
+      index: "street",
       text: {
-        query: "riviere",
+        query: "jiak kim",
         path: {
           wildcard: "*"
         },

@@ -4,10 +4,10 @@
   "mappings": {
     "dynamic": false,
     "fields": {
-      "project": {
+      "street": {
         "type": "string"
       }
     }
   },
-  "name": "project"
+  "name": "street"
 }
