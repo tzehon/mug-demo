@@ -7,12 +7,12 @@ const mongoClient = new MongoClient(process.env.MONGODB_ATLAS_URI);
 
 let database, collection;
 
-app.get("/data/:name", async (request, response) => {
+app.get("/street/:name", async (request, response) => {
     try {
         pipeline = [
             {
               $search: {
-                index: "project",
+                index: "street_index",
                 text: {
                   query: request.params.name,
                   path: {
