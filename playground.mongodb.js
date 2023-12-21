@@ -18,7 +18,7 @@ use('ura');
 pipeline = [
                 {
                   $search: {
-                    index: "street",
+                    index: "street_index",
                     text: {
                       query: "george street",
                       path: {
